@@ -96,25 +96,9 @@ lspconfig["pyright"].setup({
 
 -- configure rust-analyzer server with rust tools
 rust_tools.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		["rust-analyzer"] = {
-			imports = {
-				granularity = {
-					group = "module",
-				},
-				prefix = "self",
-			},
-			cargo = {
-				buildScripts = {
-					enable = true,
-				},
-			},
-			procMacro = {
-				enable = true,
-			},
-		},
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
 	},
 })
 
