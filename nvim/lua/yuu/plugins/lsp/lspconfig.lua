@@ -16,6 +16,12 @@ if not typescript_setup then
 	return
 end
 
+-- import rust-tools plugin safely
+local rust_toos_setup, rust_tools = pcall(require, "rust-tools")
+if not rust_toos_setup then
+	return
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -80,6 +86,36 @@ lspconfig["cssls"].setup({
 lspconfig["tailwindcss"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+})
+
+-- configure python server
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure rust-analyzer server with rust tools
+rust_tools.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
 })
 
 -- configure lua server (with special settings)
