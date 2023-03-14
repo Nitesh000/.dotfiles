@@ -28,7 +28,8 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"lua_ls",
 		"rust_analyzer",
-		"pyright"
+		"pyright",
+			"prismals"
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
