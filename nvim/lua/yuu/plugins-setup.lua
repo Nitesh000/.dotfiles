@@ -32,7 +32,13 @@ local plugins = {
 
 	-- file explorer
 	"nvim-tree/nvim-tree.lua",
+	
+	-- better color comments (e.g. TODO, FIXME, etc...)
+	{ "folke/todo-comments.nvim", dependencies = {
+		{ "nvim-lua/plenary.nvim" },
+	} },
 
+	
 	-- vs-code like icons
 	"nvim-tree/nvim-web-devicons",
 
