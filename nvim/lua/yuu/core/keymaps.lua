@@ -42,6 +42,12 @@ keymap.set("x", "<leader>p", '"_dP')
 -- Plugin Keybinds
 ----------------------
 
+-- toggleterm
+keymap.set("n", "<leader>tt", ":ToggleTerm<CR>") -- toggleterm open terminal
+
+-- Lazy package manager
+keymap.set("n", "<leader>ll", ":Lazy<CR>") -- this will open the package manager
+
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 

@@ -29,7 +29,7 @@ mason_lspconfig.setup({
 		"lua_ls",
 		"rust_analyzer",
 		"pyright",
-			"prismals"
+		"prismals",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed

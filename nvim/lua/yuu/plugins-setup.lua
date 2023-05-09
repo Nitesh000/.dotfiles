@@ -17,7 +17,9 @@ local plugins = {
 
 	"nvim-lua/plenary.nvim", -- lua functions that many plugins use
 
-	{ "bluz71/vim-nightfly-guicolors", lazy = false }, -- preferred colorscheme
+	"github/copilot.vim", -- github copilot for smart code completions
+
+	{ "bluz71/vim-nightfly-guicolors", name = "nightfly", lazy = false, priority = 1000 }, -- preferred colorscheme
 
 	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
 
@@ -30,15 +32,14 @@ local plugins = {
 	-- commenting with gc
 	"numToStr/Comment.nvim",
 
-	-- file explorer
-	"nvim-tree/nvim-tree.lua",
-	
 	-- better color comments (e.g. TODO, FIXME, etc...)
 	{ "folke/todo-comments.nvim", dependencies = {
 		{ "nvim-lua/plenary.nvim" },
 	} },
 
-	
+	-- file explorer
+	"nvim-tree/nvim-tree.lua",
+
 	-- vs-code like icons
 	"nvim-tree/nvim-web-devicons",
 
@@ -101,6 +102,9 @@ local plugins = {
 
 	-- toggle-terminal for neovim
 	{ "akinsho/toggleterm.nvim", version = "*" },
+
+	-- harpoon for quick navigation
+	{ "ThePrimeagen/harpoon" }, -- quick navigation
 }
 
 local opts = {}
