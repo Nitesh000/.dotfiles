@@ -10,7 +10,7 @@ return {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
 			sevelt = { "eslint_d" },
-			python = { "pylint" },
+			python = { "mypy", "ruff" },
 			cpp = { "clangd" },
 		}
 
