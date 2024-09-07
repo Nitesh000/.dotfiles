@@ -134,7 +134,7 @@ return {
 					jump_back = { "<c-o>", "<C-RightMouse>" },
 				},
 			},
-			src = {
+			compilation = {
 				insert_closing_quote = true,
 				text = {
 					prerelease = "  pre-release ",

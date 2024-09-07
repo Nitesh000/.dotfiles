@@ -53,24 +53,28 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
 		})
 
 		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup({
+		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "typescript", "typescriptreact", "javascriptreact" },
 		})
 
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "css", "scss", "less" },
 		})
 
 		-- configure tailwindcss server
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
 		})
 
 		-- configure python server
@@ -112,12 +116,14 @@ return {
 		lspconfig["dockerls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "dockerfile" },
 		})
 
 		-- configure prisma server
 		lspconfig["prismals"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "prisma" },
 		})
 
 		-- configure rust-analyzer server with rust tools
@@ -144,6 +150,7 @@ return {
 					end,
 				})
 			end,
+			filetypes = { "svelte" },
 		})
 
 		-- lspconfig.rust_analyzer.setup({
@@ -184,6 +191,7 @@ return {
 						},
 					},
 				},
+				filetypes = { "lua" },
 			},
 		})
 
