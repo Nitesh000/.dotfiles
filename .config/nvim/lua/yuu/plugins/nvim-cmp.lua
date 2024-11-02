@@ -61,6 +61,7 @@ return {
 				{ name = "path" }, -- file system paths
 				{ name = "crates" }, -- rust crates
 				{ name = "sourcekit" }, -- swift
+				-- { name = "codeium" }, -- codeium
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {

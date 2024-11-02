@@ -55,6 +55,9 @@ return {
 				"gofumpt", -- go formatter
 				"rustywind", -- tailwind classes rust formatter
 				"eslint", -- ts/js/ linter
+
+				-- debuggers
+				"js-debug-adapter",
 			},
 		})
 	end,
