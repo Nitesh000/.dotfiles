@@ -9,6 +9,7 @@ return {
 			typescript = { "eslint_d" },
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
+			vue = { "eslint_d" },
 			sevelt = { "eslint_d" },
 			python = { "mypy", "ruff" },
 			cpp = { "clangd" },

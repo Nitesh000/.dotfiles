@@ -60,6 +60,7 @@ return {
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 				{ name = "crates" }, -- rust crates
+				{ name = "sourcekit" }, -- swift
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {

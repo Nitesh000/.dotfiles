@@ -38,7 +38,16 @@ return {
 		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "typescript", "typescriptreact", "javascriptreact", "javascript", "html" },
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = "/Users/yuu/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
+						languages = { "javascript", "typescript", "vue" },
+					},
+				},
+			},
+			filetypes = { "typescript", "typescriptreact", "javascriptreact", "javascript", "html", "vue" },
 		})
 
 		-- configure css server
@@ -52,7 +61,16 @@ return {
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			filetypes = {
+				"html",
+				"css",
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+				"svelte",
+				"vue",
+			},
 		})
 
 		-- configure python server
@@ -142,6 +160,23 @@ return {
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
 		-- })
+
+		-- configure swift language server
+		-- configure linting with some --no-cache argument
+		lspconfig.sourcekit.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "swift" },
+			cmd = { "sourcekit-lsp" },
+			-- root_dir = util.root_pattern("Package.swift"),
+		})
+
+		-- vue language server configuration
+		lspconfig.volar.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "vue" },
+		})
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({

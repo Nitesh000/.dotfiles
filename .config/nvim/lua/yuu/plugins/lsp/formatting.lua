@@ -11,6 +11,7 @@ return {
 				javascriptreact = { "prettier", "rustywind" },
 				typescriptreact = { "prettier", "rustywind" },
 				svelte = { "prettier", "rustywind" },
+				vue = { "prettier", "rustywind" },
 				css = { "prettier", "rustywind" },
 				html = { "prettier", "rustywind" },
 				json = { "prettier" },
