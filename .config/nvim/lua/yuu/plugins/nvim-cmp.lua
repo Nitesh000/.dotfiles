@@ -8,7 +8,7 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
-		"saecki/crates.nvim", -- rust crates
+		-- "saecki/crates.nvim", -- rust crates
 	},
 	config = function()
 		local cmp = require("cmp")

@@ -12,28 +12,48 @@ return {
 		local keymap = vim.keymap
 		local dap = require("dap")
 		local dapui = require("dapui")
+		local dapIcons = {
+			Stopped = "󰁕 ",
+			Breakpoint = " ",
+			BreakpointCondition = " ",
+			BreakpointRejected = " ",
+			LogPoint = ".>",
+		}
+
 		dapui.setup()
 
-		dap.listeners.after.event_initialized["dapui_config"] = function()
+		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end
-		dap.listeners.before.event_terminated["dapui_config"] = function()
+		dap.listeners.before.launch.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.event_terminated.dapui_config = function()
 			dapui.close()
 		end
-		dap.listeners.before.event_exited["dapui_config"] = function()
+		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
 
 		---- Define colors for DAP icons
 		vim.cmd([[
-  highlight DapBreakpoint guifg=#e06c75 gui=bold
-  highlight DapBreakpointCondition guifg=#e5c07b gui=bold
-  highlight DapStopped guifg=#98c379 gui=bold
-  highlight DapStoppedLine guibg=#31353f
+  highlight Breakpoint guifg=#e06c75 gui=bold
+  highlight BreakpointCondition guifg=#e5c07b gui=bold
+  highlight Stopped guifg=#98c379 gui=bold
+  highlight StoppedLine guibg=#31353f
+  highlight LogPoint guifg=#61afef
 ]])
 
 		-- custom dap signs
-		vim.fn.sign_define("DapBreakpoint", { text = " ", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+		-- vim.fn.sign_define("DapBreakpoint", { text = " ", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+
+		-- function to sign define of all dapIcons
+		for icon, color in pairs(dapIcons) do
+			vim.fn.sign_define(
+				"Dap" .. icon,
+				{ text = color, texthl = icon or "DiagnosticInfo", linehl = "", numhl = "" }
+			)
+		end
 
 		dap.adapters["pwa-node"] = {
 			type = "server",
