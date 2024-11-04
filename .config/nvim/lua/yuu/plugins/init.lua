@@ -7,7 +7,7 @@ return {
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^5", -- Recommended
-		event = { "VeryLazy" },
+		-- event = { "VeryLazy" },
 		ft = { "rust", "rs" },
 		config = function()
 			local on_attach = require("yuu.core.lsp-keymaps")
