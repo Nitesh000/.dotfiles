@@ -82,5 +82,11 @@ return {
 			{ desc = "Add/Remove breakpoint at current line" }
 		)
 		keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>", { desc = "Run/Continue debugger" })
+		keymap.set(
+			"n",
+			"<leader>dcb",
+			":lua require('dap.breakpoints').clear() <CR>",
+			{ desc = "Clear all breakpoints" }
+		)
 	end,
 }
