@@ -7,7 +7,7 @@ return {
 	config = function()
 		vim.cmd([[
     " highlight CodeiumSuggestion guifg=#4B6479 gui=italic
-    highlight CodeiumSuggestion guifg=#52728e gui=standout
+    highlight CodeiumSuggestion guifg=#52728e gui=italic 
     ]])
 		require("codeium").setup({
 			-- Optionally disable cmp source if using virtual text only
