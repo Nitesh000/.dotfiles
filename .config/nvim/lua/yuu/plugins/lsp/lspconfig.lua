@@ -31,23 +31,45 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			init_options = {
+				configurationSection = {
+					"html",
+					"css",
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+				},
+				embeddedLanguages = {
+					css = true,
+					javascript = true,
+				},
+				provideFormatter = true,
+			},
 		})
 
 		-- configure typescript server with plugin
 		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			init_options = {
-				plugins = {
-					{
-						name = "@vue/typescript-plugin",
-						location = "/Users/yuu/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
-						languages = { "javascript", "typescript", "vue" },
-					},
-				},
+			-- for using this have to install @vue/typescript-plugin in npm global
+			-- init_options = {
+			-- 	plugins = {
+			-- 		{
+			-- 			name = "@vue/typescript-plugin",
+			-- 			location = "/Users/yuu/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
+			-- 			languages = { "vue" },
+			-- 		},
+			-- 	},
+			-- },
+			filetypes = {
+				"typescript",
+				"typescriptreact",
+				"javascriptreact",
+				"javascript",
+				"html",
+				"vue",
 			},
-			filetypes = { "typescript", "typescriptreact", "javascriptreact", "javascript", "html", "vue" },
 		})
 
 		-- configure css server
@@ -140,21 +162,6 @@ return {
 			filetypes = { "svelte" },
 		})
 
-		-- configure rust server
-		-- lspconfig.rust_analyzer.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	filetypes = { "rust" },
-		-- 	root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
-		-- 	settings = {
-		-- 		["rust-analyzer"] = {
-		-- 			cargo = {
-		-- 				allFeatures = true,
-		-- 			},
-		-- 		},
-		-- 	},
-		-- })
-
 		-- configure astro language server
 		-- lspconfig["astro"].setup({
 		-- 	capabilities = capabilities,
@@ -169,13 +176,6 @@ return {
 			filetypes = { "swift" },
 			cmd = { "sourcekit-lsp" },
 			-- root_dir = util.root_pattern("Package.swift"),
-		})
-
-		-- vue language server configuration
-		lspconfig.volar.setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "vue" },
 		})
 
 		-- configure lua server (with special settings)

@@ -35,7 +35,6 @@ return {
 				"gopls",
 				"dockerls",
 				"svelte",
-				"volar", -- vue ls
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -54,7 +53,7 @@ return {
 				-- "cpplint", -- c++ linter
 				"gofumpt", -- go formatter
 				"rustywind", -- tailwind classes rust formatter
-				"eslint", -- ts/js/ linter
+				-- "eslint", -- ts/js/ linter
 
 				-- debuggers
 				"js-debug-adapter",

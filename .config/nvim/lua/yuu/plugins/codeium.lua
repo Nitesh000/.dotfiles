@@ -2,7 +2,9 @@ return {
 	"Exafunction/codeium.nvim",
 	-- cmd = "Codeium",
 	build = ":Codeium Auth",
+	-- enabled = false,
 	opts = {},
+	enabled = false,
 	events = { "BufReadPre", "BufNewFile" },
 	config = function()
 		vim.cmd([[
