@@ -16,8 +16,9 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 0.75
+opacity = 0.65
 startup_mode = "Windowed"
+blur = true
 
 [scrolling]
 history = 10000
