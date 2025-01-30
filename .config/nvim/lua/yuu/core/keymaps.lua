@@ -46,7 +46,7 @@ keymap.set("x", "<leader>p", '"_dP')
 keymap.set("n", "J", "mzJ`z")
 
 -- change the a file to executable
-keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap.set("n", "<leader>x", "<cmd>!chmod 700 %<CR>", { silent = true })
 
 ----------------------
 -- Plugin Keybinds

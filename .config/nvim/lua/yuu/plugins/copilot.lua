@@ -4,5 +4,5 @@ return {
 	-- keys = {
 	-- 	{ "<leader>ce" },
 	-- },
-	-- enabled = false,
+	enabled = false,
 }

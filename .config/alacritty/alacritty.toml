@@ -14,7 +14,7 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
-decorations = "none"
+decorations = "buttonless"
 dynamic_title = true
 opacity = 0.65
 startup_mode = "Windowed"
