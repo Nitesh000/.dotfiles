@@ -46,6 +46,7 @@ return {
 				"prettier", -- ts/js formatter
 				"stylua", -- lua formatter
 				"eslint_d", -- ts/js linter
+				"swiftlint", -- swift linter
 				-- "pylint", -- pythong linter
 				"mypy", -- python type checker
 				"ruff", -- python linter

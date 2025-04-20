@@ -184,14 +184,30 @@ return {
 		-- 	on_attach = on_attach,
 		-- })
 
-		-- configure swift language server
+		-- NOTE: my sourcekit configure swift language server
 		-- configure linting with some --no-cache argument
+		-- lspconfig.sourcekit.setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "swift" },
+		-- 	cmd = { "sourcekit-lsp" },
+		-- 	-- root_dir = util.root_pattern("Package.swift"),
+		-- })
+
+		-- NOTE: sourcekit setup from web
 		lspconfig.sourcekit.setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
+			capabilities = {
+				workspace = {
+					didChangeWatchedFiles = {
+						dynamicRegistration = true,
+					},
+				},
+			},
 			filetypes = { "swift" },
-			cmd = { "sourcekit-lsp" },
-			-- root_dir = util.root_pattern("Package.swift"),
+			on_attach = on_attach,
+			root_dir = function(fname)
+				return util.root_pattern("Package.swift")(fname) or util.path.dirname(fname)
+			end,
 		})
 
 		-- configure lua server (with special settings)

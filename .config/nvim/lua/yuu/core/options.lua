@@ -41,6 +41,9 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
 
+-- Remove ~ symbols at the end of buffer
+vim.opt.fillchars = "eob: " -- Remove ~ at the end of the buffer
+
 -- some useful functions for neovim
 function P(str)
 	print(vim.inspect(str))
