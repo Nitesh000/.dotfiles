@@ -35,12 +35,23 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move line down
 keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move line up
 
+-- search term to stay at the middle
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
+
 -- put the cursor in the middle when half page up/down
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set({ "n", "v" }, "<C-m>", "<C-d>zz")
 
 -- don't copy to clipboard when cut-pasting
 keymap.set("x", "<leader>p", '"_dP')
+
+-- only copy to system clipboard with <leader>y
+keymap.set({ "n", "v" }, "<leader>y", '"+y')
+keymap.set("n", "<leader>Y", '"+Y')
+
+-- only copy on delete when do <leader>d
+keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 -- change the "J" command to a little stable
 keymap.set("n", "J", "mzJ`z")
