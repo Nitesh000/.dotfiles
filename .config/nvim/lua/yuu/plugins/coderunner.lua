@@ -21,6 +21,12 @@ return {
 				c = {
 					"cd '$dir' && gcc $fileName && '$dir/a.out'",
 				},
+				swift = {
+					"cd '$dir' && swift $fileName",
+				},
+				go = {
+					"cd '$dir' && go run $fileName",
+				},
 			},
 		})
 
