@@ -40,6 +40,7 @@ eval "$(goenv init -)"
 export GOPATH="$HOME/go"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"

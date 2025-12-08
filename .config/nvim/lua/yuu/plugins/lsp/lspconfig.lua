@@ -6,7 +6,7 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
+		-- local lspconfig = require("lspconfig")
 
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -44,7 +44,7 @@ return {
 		})
 
 		-- configure html server
-		lspconfig["html"].setup({
+		vim.lsp.config("html", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			init_options = {
@@ -63,9 +63,8 @@ return {
 				provideFormatter = true,
 			},
 		})
-
 		-- configure typescript server with plugin
-		lspconfig["ts_ls"].setup({
+		vim.lsp.config("ts_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			-- for using this have to install @vue/typescript-plugin in npm global
@@ -89,14 +88,14 @@ return {
 		})
 
 		-- configure css server
-		lspconfig["cssls"].setup({
+		vim.lsp.config("cssls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "css", "scss", "less" },
 		})
 
 		-- configure tailwindcss server
-		lspconfig["tailwindcss"].setup({
+		vim.lsp.config("tailwindcss", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = {
@@ -112,7 +111,7 @@ return {
 		})
 
 		-- configure python server
-		lspconfig["pyright"].setup({
+		vim.lsp.config("pyright", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "python" },
@@ -129,7 +128,7 @@ return {
 		-- })
 
 		-- configure gopls server
-		lspconfig["gopls"].setup({
+		vim.lsp.config("gopls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			cmd = { "gopls" },
@@ -147,21 +146,21 @@ return {
 		})
 
 		-- configure docker server
-		lspconfig["dockerls"].setup({
+		vim.lsp.config("dockerls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "dockerfile" },
 		})
 
 		-- configure prisma server
-		lspconfig["prismals"].setup({
+		vim.lsp.config("prismals", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "prisma" },
 		})
 
 		-- configure svelte server
-		lspconfig["svelte"].setup({
+		vim.lsp.config("svelte", {
 			capabilities = capabilities,
 			on_attach = function(client, bufnr)
 				on_attach(client, bufnr)
@@ -195,7 +194,7 @@ return {
 		-- })
 
 		-- NOTE: sourcekit setup from web
-		lspconfig.sourcekit.setup({
+		vim.lsp.config("sourcekit", {
 			capabilities = {
 				workspace = {
 					didChangeWatchedFiles = {
@@ -211,7 +210,7 @@ return {
 		})
 
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
