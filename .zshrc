@@ -10,6 +10,12 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Enable vi mode for zsh command line editing
+bindkey -v
+
+# Reduce mode switching delay
+export KEYTIMEOUT=1
+
 # source bash aliases
 source ~/.dotfiles/.bash_aliases
 
