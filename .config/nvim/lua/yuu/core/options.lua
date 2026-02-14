@@ -39,6 +39,9 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
+-- window border rounded
+vim.opt.winborder = "rounded"
+
 opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- Remove ~ symbols at the end of buffer
