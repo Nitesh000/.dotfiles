@@ -87,6 +87,11 @@ return {
 			},
 		})
 
+		vim.lsp.config("vue_ls", {
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure css server
 		vim.lsp.config("cssls", {
 			capabilities = capabilities,

@@ -22,6 +22,7 @@ return {
 				MatchParen = { bg = "#023135" },
 				FloatBorder = { fg = "#019F9E", bg = "none" },
 				NormalFloat = { bg = "none" },
+				ColorColumn = { bg = "#023135" },
 			}
 
 			for group, opts in pairs(highlights) do

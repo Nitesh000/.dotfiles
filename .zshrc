@@ -52,4 +52,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
+# java openjdk@17
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
+# android studio
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin

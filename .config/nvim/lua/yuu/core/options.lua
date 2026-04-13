@@ -47,6 +47,9 @@ opt.iskeyword:append("-") -- consider string-string as whole word
 -- Remove ~ symbols at the end of buffer
 vim.opt.fillchars = "eob: " -- Remove ~ at the end of the buffer
 
+-- color columns at 80 charcters
+opt.colorcolumn = "80"
+
 -- some useful functions for neovim
 function P(str)
 	print(vim.inspect(str))
