@@ -23,6 +23,9 @@ return {
 				FloatBorder = { fg = "#019F9E", bg = "none" },
 				NormalFloat = { bg = "none" },
 				ColorColumn = { bg = "#023135" },
+				-- added special key and question
+				SpecialKey = { fg = "#4C73CF", bg = "none" },
+				Question = { fg = "#82AAFF", bg = "none" },
 			}
 
 			for group, opts in pairs(highlights) do
