@@ -17,7 +17,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 decorations = "buttonless"
 dynamic_title = true
 opacity = 0.65
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 blur = true
 
 [scrolling]

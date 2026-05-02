@@ -1,6 +1,6 @@
 # By default Reload config with shft + cmd + , 
 
-theme = rose-pine
+theme = Rose Pine Moon
 background = #000000
 background-opacity = 0.65
 background-blur-radius = 20
@@ -19,8 +19,8 @@ macos-titlebar-style = hidden
 
 confirm-close-surface = false
 window-decoration = true
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 5
+window-padding-y = 5
 window-padding-balance = true
 
 auto-update = check
@@ -70,3 +70,33 @@ keybind = super+b>l=goto_split:right
 # quick-terminal-screen = mouse
 # quick-terminal-position = left
 # keybind = super+b>t=toggle_quick_terminal
+
+
+# colors 
+# Primary colors
+background = 000000
+foreground = ffffff
+
+# Cursor
+cursor-color = ffffff
+cursor-text = F81CE5
+
+# Normal colors (palette 0-7)
+palette = 0=#000000
+palette = 1=#fe0100
+palette = 2=#33ff00
+palette = 3=#feff00
+palette = 4=#0066ff
+palette = 5=#cc00ff
+palette = 6=#00ffff
+palette = 7=#d0d0d0
+
+# Bright colors (palette 8-15)
+palette = 8=#808080
+palette = 9=#fe0100
+palette = 10=#33ff00
+palette = 11=#feff00
+palette = 12=#0066ff
+palette = 13=#cc00ff
+palette = 14=#00ffff
+palette = 15=#ffffff

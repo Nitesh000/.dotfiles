@@ -60,3 +60,46 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+# ------ customization -------
+
+# custom tmux opener
+custom-tmux() {
+    if [ $# -gt 0 ]; then
+        tmux -u "$@"
+        return
+    fi
+    
+    if command -v fd &> /dev/null && command -v zoxide &> /dev/null; then
+        selected=$(
+            {
+                zoxide query -l 2>/dev/null | grep "^$HOME/Developer"
+                fd --type d --hidden --max-depth 3 . ~/Developer --exec test -d {}/.git \; --print
+                fd --type d --max-depth 1 . ~/Developer
+            } | awk '!seen[$0]++' | fzf --height=21 --reverse --border --prompt="Developer: "
+        )
+    elif command -v fd &> /dev/null; then
+        selected=$(
+            {
+                fd --type d --hidden --max-depth 3 . ~/Developer --exec test -d {}/.git \; --print
+                fd --type d --max-depth 1 . ~/Developer
+            } | awk '!seen[$0]++' | fzf --height=21 --reverse --border --prompt="Developer: "
+        )
+    else
+        selected=$(find ~/Developer -type d \( -name .git -o -name node_modules \) -prune -o -type d -print 2>/dev/null | fzf --height=21 --reverse --border --prompt="Developer: ")
+    fi
+    
+    [ -z "$selected" ] && return 0
+    
+    session_name=$(basename "$selected" | tr . _)
+    
+    if ! tmux has-session -t "$session_name" 2>/dev/null; then
+        tmux -u new-session -d -s "$session_name" -c "$selected"
+    fi
+    
+    if [ -n "$TMUX" ]; then
+        tmux switch-client -t "$session_name"
+    else
+        tmux -u attach -t "$session_name"
+    fi
+}
