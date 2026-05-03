@@ -27,6 +27,9 @@ return {
 				go = {
 					"cd '$dir' && go run $fileName",
 				},
+				lua = {
+					"cd '$dir' && lua $fileName",
+				},
 			},
 		})
 
