@@ -22,7 +22,7 @@ return {
 				if vim.bo.filetype == "env" then
 					return "# %s"
 				end
-				return ts_context_commentstring.create_pre_hook()
+				return ts_context_commentstring.create_pre_hook()(ctx)
 			end,
 		})
 	end,
