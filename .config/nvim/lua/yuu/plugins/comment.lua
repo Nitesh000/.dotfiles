@@ -18,7 +18,12 @@ return {
 		-- enable comment
 		comment.setup({
 			-- for commenting tsx and jsx files
-			pre_hook = ts_context_commentstring.create_pre_hook(),
+			pre_hook = function(ctx)
+				if vim.bo.filetype == "env" then
+					return "# %s"
+				end
+				return ts_context_commentstring.create_pre_hook()
+			end,
 		})
 	end,
 }
