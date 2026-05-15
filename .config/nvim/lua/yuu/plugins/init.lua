@@ -6,7 +6,7 @@ return {
 	-- rust lsp
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^5", -- Recommended
+		version = "^9", -- Recommended
 		-- event = { "VeryLazy" },
 		ft = { "rust", "rs" },
 		config = function()

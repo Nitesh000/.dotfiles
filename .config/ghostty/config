@@ -71,6 +71,8 @@ keybind = super+b>l=goto_split:right
 # quick-terminal-position = left
 # keybind = super+b>t=toggle_quick_terminal
 
+# disable keybinds related to d
+keybind = d=unbind
 
 # colors 
 # Primary colors
@@ -100,3 +102,5 @@ palette = 12=#0066ff
 palette = 13=#cc00ff
 palette = 14=#00ffff
 palette = 15=#ffffff
+
+

@@ -63,6 +63,9 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 # ------ customization -------
 
+# custom script path
+export PATH=$PATH:$HOME/.config/custom-scripts
+
 # custom tmux opener
 custom-tmux() {
     if [ $# -gt 0 ]; then

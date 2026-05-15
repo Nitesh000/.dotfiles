@@ -1,0 +1,20 @@
+#!/bin/bash
+
+case "$1" in
+  enable)
+    networksetup -setairportpower en0 on
+    sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 1
+    sudo killall -HUP bluetoothd
+    echo "WiFi + Bluetooth ON"
+    ;;
+  disable)
+    networksetup -setairportpower en0 off
+    sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
+    sudo killall -HUP bluetoothd
+    echo "WiFi + Bluetooth OFF"
+    ;;
+  *)
+    echo "Usage: wibl {enable|disable}"
+    exit 1
+    ;;
+esac
