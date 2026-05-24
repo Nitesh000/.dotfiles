@@ -5,6 +5,10 @@ return {
 	config = function()
 		local keymap = vim.keymap -- for custom mappings
 		require("code_runner").setup({
+			term = {
+				position = "bel",
+				size = vim.api.nvim_win_get_height(0) / 2,
+			},
 			filetype = {
 				java = {
 					"cd '$dir' && javac $fileName && java $fileNameWithoutExt",
