@@ -6,7 +6,10 @@ local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
-	keymap.set("n", "gf", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+	-- keymap.set("n", "gf", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+	keymap.set("n", "gf", "<cmd>Trouble lsp toggle<cr>", opts) -- trouble show definitions, references
+	keymap.set("n", "<leader>gt", "<cmd>Trouble diagnostics toggle<cr>", opts) -- trouble diagnostics (Trouble)
+	keymap.set("n", "<leader>gb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", opts) -- trouble diagnostics of current buffer
 	keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- got to declaration
 	keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show definition
 	keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show implementation
