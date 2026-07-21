@@ -7,7 +7,7 @@ return {
 
 			-- Installing all parsers at once
 			vim.cmd(
-				"TSInstall! json javascript typescript tsx yaml html css markdown markdown_inline svelte graphql bash lua vim dockerfile gitignore rust python scss sql go toml prisma"
+				"TSInstall! json javascript typescript tsx vue yaml html css markdown markdown_inline svelte graphql bash lua vim dockerfile gitignore rust python scss sql go toml prisma"
 			)
 		end,
 		dependencies = {

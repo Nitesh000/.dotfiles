@@ -92,6 +92,29 @@ return {
 			on_attach = on_attach,
 		})
 
+		local vue_language_server_path =
+			"/Users/yuu/.nvm/versions/node/v22.22.3/lib/node_modules/@vue/typescript-plugin"
+		local vue_plugin = {
+			name = "@vue/typescript-plugin",
+			location = vue_language_server_path,
+			languages = { "vue" },
+			configNamespace = "typescript",
+		}
+
+		vim.lsp.config("vtsls", {
+			settings = {
+				vtsls = {
+					tsserver = {
+						globalPlugins = {
+							vue_plugin,
+						},
+					},
+				},
+			},
+			-- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			filetypes = { "vue" },
+		})
+
 		-- configure css server
 		vim.lsp.config("cssls", {
 			capabilities = capabilities,

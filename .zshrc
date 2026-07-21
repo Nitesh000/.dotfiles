@@ -106,3 +106,6 @@ custom-tmux() {
         tmux -u attach -t "$session_name"
     fi
 }
+
+# Added by Antigravity IDE
+export PATH="/Users/yuu/.antigravity-ide/antigravity-ide/bin:$PATH"
