@@ -1,6 +1,6 @@
 return {
 	"saecki/crates.nvim",
-	dependencies = { "hrsh7th/nvim-cmp", "nvim-lua/plenary.nvim" },
+	dependencies = { "Saghen/blink.cmp", "nvim-lua/plenary.nvim" },
 	ft = { "rust", "toml" },
 	config = function()
 		local crates = require("crates")
@@ -143,9 +143,12 @@ return {
 					enabled = false,
 					name = "Crates",
 				},
-				cmp = {
+				blink = {
 					enabled = true,
 				},
+				-- cmp = {
+				-- 	enabled = true,
+				-- },
 			},
 			on_attach = function(bufnr) end,
 		})

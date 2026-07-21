@@ -5,7 +5,7 @@ return {
 			tools = {
 				my_tool = {
 					cmd = { "agy" },
-					-- Optional: custom keymaps for this tool
+					-- Optional: custom keymaps for this
 					-- keys = {
 					-- 	submit = {
 					-- 		"<c-s>",
@@ -16,6 +16,9 @@ return {
 					-- },
 				},
 			},
+			nes = {
+				enabled = false,
+			},
 		},
 	},
 	keys = {
@@ -23,7 +26,7 @@ return {
 		{
 			"<c-.>",
 			function()
-				require("sidekick.cli").focus({ name = "my_tool" })
+				require("sidekick.cli").focus()
 			end,
 			desc = "Sidekick Focus",
 			mode = { "n", "t", "i", "x" },
@@ -31,12 +34,12 @@ return {
 		{
 			"<leader>aa",
 			function()
-				require("sidekick.cli").toggle()
+				require("sidekick.cli").toggle({ name = "my_tool", focus = true })
 			end,
 			desc = "Sidekick Toggle CLI",
 		},
 		{
-			"<leader>as",
+			"<leader>av",
 			function()
 				require("sidekick.cli").select()
 			end,
