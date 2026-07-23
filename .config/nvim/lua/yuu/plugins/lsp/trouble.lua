@@ -5,7 +5,7 @@ return {
 	opts = {
 		modes = {
 			lsp = {
-				win = { position = "right" },
+				win = { relative = "win", position = "right" },
 			},
 		},
 	},
