@@ -4,6 +4,13 @@ return {
 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
-	opts = {},
-	enabled = false,
+	opts = {
+		-- use these for autocomplete in markdwon files
+		-- completions = {
+		-- 	lsp = {
+		-- 		enabled = true,
+		-- 	},
+		-- },
+	},
+	-- enabled = false,
 }
