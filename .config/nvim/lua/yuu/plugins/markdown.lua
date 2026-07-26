@@ -11,6 +11,15 @@ return {
 		-- 		enabled = true,
 		-- 	},
 		-- },
+		enabled = false,
+	},
+	keys = {
+		{
+			"<leader>vm",
+			"<cmd>RenderMarkdown toggle<cr>",
+			desc = "Toggle Markdown Rendering",
+			ft = "markdown",
+		},
 	},
 	-- enabled = false,
 }
