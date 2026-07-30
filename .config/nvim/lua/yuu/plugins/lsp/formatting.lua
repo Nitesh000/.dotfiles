@@ -19,8 +19,9 @@ return {
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				lua = { "stylua" },
-				python = { "black" },
+				python = { "ruff", "black" },
 				go = { "gofumpt" },
+				cpp = { "clangd-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true, -- change this to true if want to fail to formatting if no LSP formatter is available

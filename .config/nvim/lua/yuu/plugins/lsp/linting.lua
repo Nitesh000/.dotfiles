@@ -12,7 +12,7 @@ return {
 			vue = { "eslint_d" },
 			sevelt = { "eslint_d" },
 			python = { "mypy", "ruff" },
-			cpp = { "clangd" },
+			cpp = { "cpplint" },
 			swift = { "swiftlint" },
 		}
 

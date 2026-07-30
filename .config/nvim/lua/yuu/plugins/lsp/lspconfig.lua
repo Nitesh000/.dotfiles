@@ -148,10 +148,11 @@ return {
 		})
 
 		-- configure clangd server
-		-- lspconfig["clangd"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
+		vim.lsp.config("clangd", {
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "c", "cpp" },
+		})
 		-- lspconfig.clangd.setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
