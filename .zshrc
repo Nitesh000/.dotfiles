@@ -109,3 +109,11 @@ custom-tmux() {
 
 # Added by Antigravity IDE
 export PATH="/Users/yuu/.antigravity-ide/antigravity-ide/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/yuu/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

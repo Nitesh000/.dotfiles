@@ -22,4 +22,4 @@ alias fcd='cd ~ && cd "$(find * -type d | fzf --reverse --height 50% --preview "
 alias vim='nvim'
 alias notes='cd ~/My\ Space/developer/notes/'
 alias pn='pnpm'
-
+alias litvim='nvim leetcode.nvim' # for leetcode nvim
