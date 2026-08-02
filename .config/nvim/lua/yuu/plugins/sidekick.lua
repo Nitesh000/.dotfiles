@@ -4,7 +4,7 @@ return {
 		cli = {
 			tools = {
 				my_tool = {
-					cmd = { "agy" },
+					cmd = { "pi" },
 					-- Optional: custom keymaps for this
 					-- keys = {
 					-- 	submit = {
@@ -34,14 +34,14 @@ return {
 		{
 			"<leader>aa",
 			function()
-				require("sidekick.cli").toggle({ name = "my_tool", focus = true })
+				require("sidekick.cli").toggle({ name = "pi", focus = true })
 			end,
 			desc = "Sidekick Toggle CLI",
 		},
 		{
 			"<leader>av",
 			function()
-				require("sidekick.cli").select()
+				require("sidekick.cli").select({ name = "pi", focus = true })
 			end,
 			-- Or to select only installed tools:
 			-- require("sidekick.cli").select({ filter = { installed = true } })
@@ -57,7 +57,7 @@ return {
 		{
 			"<leader>at",
 			function()
-				require("sidekick.cli").send({ msg = "{this}" })
+				require("sidekick.cli").send({ msg = "{this}", name = "pi", focus = true })
 			end,
 			mode = { "x", "n" },
 			desc = "Send This",
@@ -65,14 +65,14 @@ return {
 		{
 			"<leader>af",
 			function()
-				require("sidekick.cli").send({ msg = "{file}" })
+				require("sidekick.cli").send({ msg = "{file}", name = "pi", focus = true })
 			end,
 			desc = "Send File",
 		},
 		{
 			"<leader>av",
 			function()
-				require("sidekick.cli").send({ msg = "{selection}" })
+				require("sidekick.cli").send({ msg = "{selection}", name = "pi", focus = true })
 			end,
 			mode = { "x" },
 			desc = "Send Visual Selection",
