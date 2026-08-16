@@ -20,7 +20,7 @@ return {
 					"cd '$dir' && rustc $fileName && '$dir/$fileNameWithoutExt'",
 				},
 				cpp = {
-					"cd '$dir' && g++ $fileName && '$dir/a.out'",
+					"cd '$dir' && g++ -std=c++17 $fileName && '$dir/a.out'",
 				},
 				c = {
 					"cd '$dir' && gcc $fileName && '$dir/a.out'",
