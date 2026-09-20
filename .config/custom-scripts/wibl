@@ -1,20 +1,36 @@
 #!/bin/bash
 
+WIFI_INTERFACE=$(networksetup -listallhardwareports |
+  awk '/Wi-Fi|AirPort/{getline; print $2}')
+
+if [[ -z "$WIFI_INTERFACE" ]]; then
+    echo "Could not find Wi-Fi interface."
+    exit 1
+fi
+
 case "$1" in
   enable)
-    networksetup -setairportpower en0 on
-    sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 1
-    sudo killall -HUP bluetoothd
-    echo "WiFi + Bluetooth ON"
+    networksetup -setairportpower "$WIFI_INTERFACE" on
+    blueutil --power 1
+    echo "Wi-Fi + Bluetooth ON"
     ;;
+
   disable)
-    networksetup -setairportpower en0 off
-    sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
-    sudo killall -HUP bluetoothd
-    echo "WiFi + Bluetooth OFF"
+    networksetup -setairportpower "$WIFI_INTERFACE" off
+    blueutil --power 0
+    echo "Wi-Fi + Bluetooth OFF"
     ;;
+
+  status)
+    WIFI_STATUS=$(networksetup -getairportpower "$WIFI_INTERFACE")
+    BT_STATUS=$(blueutil --power)
+
+    echo "$WIFI_STATUS"
+    echo "Bluetooth: $BT_STATUS"
+    ;;
+
   *)
-    echo "Usage: wibl {enable|disable}"
+    echo "Usage: wibl {enable|disable|status}"
     exit 1
     ;;
 esac
