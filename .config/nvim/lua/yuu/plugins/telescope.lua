@@ -24,6 +24,7 @@ return {
 				-- file ignore patterns
 				file_ignore_patterns = {
 					"target",
+					"^.git/",
 				},
 			},
 			pickers = {
