@@ -14,7 +14,7 @@ return {
 					"cd '$dir' && javac $fileName && java $fileNameWithoutExt",
 				},
 				python = "python3 -u $fileName",
-				typescript = "ts-node $fileName",
+				typescript = "tsx $fileName",
 				javascript = "node $fileName",
 				rust = {
 					"cd '$dir' && rustc $fileName && '$dir/$fileNameWithoutExt'",
