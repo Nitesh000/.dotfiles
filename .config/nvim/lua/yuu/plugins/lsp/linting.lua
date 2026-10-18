@@ -11,7 +11,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			vue = { "eslint_d" },
 			sevelt = { "eslint_d" },
-			python = { "mypy", "ruff" },
+			python = { "ruff" },
 			cpp = { "cpplint" },
 			swift = { "swiftlint" },
 		}
