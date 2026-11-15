@@ -29,7 +29,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
-				-- "rust_analyzer",
+				"rust_analyzer",
 				"pyright",
 				-- "prismals",
 				"clangd",
@@ -39,6 +39,14 @@ return {
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
+
+			-- automatic enable
+			automatic_enable = {
+				-- disableing rust_analyzer so i can use the rustaceanvim
+				exclude = {
+					"rust_analyzer",
+				},
+			},
 		})
 
 		mason_tool_installer.setup({
