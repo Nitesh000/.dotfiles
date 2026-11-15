@@ -89,6 +89,13 @@ return {
 			},
 		})
 
+		-- -- configure tsc (typescript 7) with plugin
+		-- vim.lsp.config("tsc", {
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+		-- vim.lsp.enable("tsc")
+
 		vim.lsp.config("vue_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,

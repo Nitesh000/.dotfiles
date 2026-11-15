@@ -13,7 +13,7 @@ return {
 				java = {
 					"cd '$dir' && javac $fileName && java $fileNameWithoutExt",
 				},
-				python = "python3 -u $fileName",
+				python = "cd '$dir' && python3 -u $fileName",
 				typescript = "tsx $fileName",
 				javascript = "node $fileName",
 				rust = {
