@@ -33,6 +33,9 @@ return {
 					},
 				},
 			},
+			-- sync root with cwd
+			sync_root_with_cwd = true, -- cd in nvim moves the tree root
+
 			-- disable window_picker for
 			-- explorer to work well with
 			-- window splits
@@ -41,6 +44,10 @@ return {
 					window_picker = {
 						enable = false,
 					},
+				},
+				change_dir = {
+					enable = true, -- changing tree root runs cd (default)
+					global = true, -- use :cd not :lcd
 				},
 			},
 			git = {

@@ -43,7 +43,7 @@ return {
 				hide_on_select = false,
 				copy_register = '"',
 				style = "minimal",
-				border = "none",
+				-- border = "none",
 				show_version_date = true,
 				show_dependency_version = true,
 				max_height = 30,
